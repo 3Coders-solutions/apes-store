@@ -11,8 +11,14 @@ a {
   text-decoration: none;
 }
 
+ul {
+  list-style: none;
+}
+
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +29,15 @@ a {
     color: white;
     background: black;
   }
+}
+
+.nav-link {
+  background-color: #ccc;
+  border-radius: .25em;
+  cursor: pointer;
+  padding: .5em .75em;
+}
+
+.nav-link:hover {
+  filter: brightness(80%);
 }

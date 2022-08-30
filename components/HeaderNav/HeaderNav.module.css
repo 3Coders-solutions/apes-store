@@ -1,0 +1,4 @@
+.nav_ul {
+  display: flex;
+  gap: 1rem;
+}
