@@ -34,7 +34,7 @@ const HeaderNav = () => {
       <nav>
         <ul className={styles.nav_ul}>
           {LINKS.map((link) => (
-            <li>
+            <li key={link.title}>
               <Link href={link.href}>
                 <a className="nav-link">{link.title}</a>
               </Link>

@@ -1,6 +1,7 @@
 import { NextPage } from 'next'
 import Head from 'next/head'
 import HeaderNav from '@components/HeaderNav'
+import FooterNav from '@components/FooterNav'
 
 const Contact: NextPage = () => {
   return (
@@ -10,6 +11,8 @@ const Contact: NextPage = () => {
     </Head>
     <div>
       <HeaderNav/>
+      contacto
+      <FooterNav />
     </div>
     </>
   )

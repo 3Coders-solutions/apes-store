@@ -17,9 +17,7 @@ const Home: NextPage = () => {
 
       <HeaderNav />
 
-      <main className={styles.main}>
-        
-      </main>
+      
 
       <FooterNav />
     </>
