@@ -1,9 +1,30 @@
+:root {
+  --margin-x: min(8rem, 15%);
+  --clr-primary: white;
+  --clr-secondary: #DDD;
+  --clr-tertiary: red;
+  --clr-twitter: #00acee;
+  --clr-instagram: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  --clr-facebook: #3b5998;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Montserrat', Helvetica, sans-serif;
 }
 
 a {
@@ -11,11 +32,17 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+ul {
+  list-style: none;
 }
 
-@media (prefers-color-scheme: dark) {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
@@ -23,4 +50,43 @@ a {
     color: white;
     background: black;
   }
+} */
+
+.button-link {
+  background-color: var(--clr-secondary);
+  border-radius: .25em;
+  cursor: pointer;
+  display: inline-block;
+  padding: .5em .75em;
+}
+
+.button-link:hover,
+.button-link:active {
+  filter: brightness(80%);
+}
+
+.container {
+  margin-inline: var(--margin-x);
+}
+
+.social-link { 
+  text-transform: capitalize;
+  transition: color, background-color, ease .3s;
+}
+.social-link--facebook:hover { color: var(--clr-facebook); }
+.social-link--instagram:hover {
+  color: transparent;
+  background: var(--clr-instagram);
+  background-clip: text;
+}
+.social-link--instagram:hover svg { 
+  color: #FDB97A;
+  transition: color ease .3s;
+}
+.social-link--twitter:hover { color: var(--clr-twitter); }
+
+.default-link:hover,
+.default-link:active {
+  text-decoration: underline;
+  filter: brightness(80%);
 }
