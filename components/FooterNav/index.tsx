@@ -6,17 +6,17 @@ import styles from './FooterNav.module.css'
 
 const SOCIAL_LINKS = [
   {
-    title: 'Instagram',
+    title: 'instagram',
     href: 'https://instagram.com',
     icon: faInstagram
   },
   {
-    title: 'Twitter',
+    title: 'twitter',
     href: 'https://twitter.com',
     icon: faTwitter
   },
   {
-    title: 'Facebook',
+    title: 'facebook',
     href: 'https://facebook.com',
     icon: faFacebook
   }
@@ -51,7 +51,7 @@ const FooterNav = () => {
             {SOCIAL_LINKS.map((link) => (
               <li key={link.title}>
                 <Link href={link.href}>
-                  <a target="_blank"><FontAwesomeIcon icon={link.icon} /> {link.title}</a>
+                  <a className={`social-link social-link--${link.title}`} target="_blank"><FontAwesomeIcon icon={link.icon} /> {link.title}</a>
                 </Link>
               </li>
             ))}
