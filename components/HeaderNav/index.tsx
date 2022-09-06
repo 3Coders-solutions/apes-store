@@ -27,8 +27,6 @@ const HeaderNav = () => {
   const handleSearch = (ev: any) => {
     ev.preventDefault()
     console.dir(ev.target)
-    // const formData = new FormData(ev.target)
-    // console.log(formData)
     const formData = Object.fromEntries(new FormData(ev.target))
     console.log(formData)
   }

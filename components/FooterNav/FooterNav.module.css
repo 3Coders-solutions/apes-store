@@ -1,7 +1,7 @@
 .footer {
   background-color: #D9D9D9;
   color: black;
-  padding: 2rem;
+  padding-block: 2rem;
 }
 
 .flexContainer {
@@ -17,8 +17,7 @@
 }
 
 .columnList {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin-block: 1.5em;;
 }
 
 .columnList li {

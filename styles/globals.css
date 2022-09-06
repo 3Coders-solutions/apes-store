@@ -1,5 +1,5 @@
 :root {
-  --margin-x: min(8rem, 15%);
+  --margin-x: min(8rem, 10%);
   --clr-primary: white;
   --clr-secondary: #DDD;
   --clr-tertiary: red;
@@ -57,6 +57,7 @@ ul {
   border-radius: .25em;
   cursor: pointer;
   display: inline-block;
+  min-width: fit-content;
   padding: .5em .75em;
 }
 
