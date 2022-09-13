@@ -1,7 +1,7 @@
-import prisma from "./prisma";
+import prisma from './prisma'
 import bcrypt from 'bcrypt'
 export async function createUser(name: string, email: string, password: string) {
-  const salt = await bcrypt.genSalt(10);
+  const salt = await bcrypt.genSalt(10)
   let passwordHash = await bcrypt.hash(password, salt);
   let user = await prisma.user.create({
     data: {
@@ -12,8 +12,8 @@ export async function createUser(name: string, email: string, password: string) 
     },
   })
   //@ts-ignore
-  delete user["password"];
-  return user;
+  delete user["password"]
+  return user
 }
 export async function getUser(email: string, password: string) {
 
@@ -21,13 +21,13 @@ export async function getUser(email: string, password: string) {
     where: {
       email: email
     }
-  });
-  if (!user) return null;
+  })
+  if (!user) return null
   //@ts-ignore
   let match = await bcrypt.compare(password, user.password)
   //@ts-ignore
   delete user["password"]
-  if (match) return user;
+  if (match) return user
   return null;
 
 }
