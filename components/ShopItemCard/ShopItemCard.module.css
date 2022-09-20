@@ -1,0 +1,7 @@
+.card {
+  border: 1px solid red;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
