@@ -1,8 +1,8 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import styles from './HeaderNav.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-import { FormEvent } from 'react'
 
 const LINKS = [
   {
@@ -35,7 +35,14 @@ const HeaderNav = () => {
     <header className={styles.header}>
       <div className="container">
         <div className={styles.headerTop}>
-          <div>logo</div>
+          <div>
+            <Image
+              src="/../public/img/logo.jpg"
+              alt="Logo img"
+              width={50}
+              height={50}
+            />
+          </div>
           <div className={styles.searcherContainer}>
             <form className={styles.searcher} onSubmit={handleSearch}>
               <button className={styles.searchButton} type="submit">
