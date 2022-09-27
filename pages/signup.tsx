@@ -1,5 +1,4 @@
 import { NextPage } from 'next'
-import styles from '../styles/Signup.module.css'
 
 const Signup: NextPage = () => {
   const handleSubmit = (ev: any) => {
@@ -10,30 +9,34 @@ const Signup: NextPage = () => {
 
   return (
     <div className="container center-screen">
-      <form className={styles.form} onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <label htmlFor="email">Email: </label>
         <input
           type="text" 
           id="email"
           name="email"
+          required
         />
         <label htmlFor="name">Nombre: </label>
         <input 
           type="text" 
           id="name"
           name="name"
+          required
         />
         <label htmlFor="surname">Apellido: </label>
         <input 
           type="text" 
           id="surname"
           name="surname"
+          required
         />
         <label htmlFor="password">Contraseña: </label>
         <input 
           type="password" 
           id="password"
           name="password"
+          required
         />
         <button type="submit">Registrarse</button>
       </form>

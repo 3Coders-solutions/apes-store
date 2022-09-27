@@ -1,7 +1,40 @@
 .card {
-  border: 1px solid red;
-  max-width: 350px;
+  margin: 1rem; /* BORRAR */
+  align-items: center;
+  box-shadow: 0 0 15px -2px var(--clr-secondary);
+  border-radius: .5em;
   display: flex;
   flex-direction: column;
-  text-align: center;
+  justify-content: space-between;
+  width: 250px;
+  max-width: 250px;
+  height: 350px;
+  padding: 1em;
+}
+
+.card p,
+.card h3 {
+  display: -webkit-box;  
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card h3 {
+  -webkit-line-clamp: 2;
+}
+
+.card p {
+  font-size: .9rem;
+  -webkit-line-clamp: 5;
+}
+
+.card__itemDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card__itemImage img {
+  width: 50px;
+  height: 50px;
 }

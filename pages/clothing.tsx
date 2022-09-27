@@ -1,26 +1,25 @@
 import { NextPage } from 'next'
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
 
 import HeaderNav from '@components/HeaderNav'
 import FooterNav from '@components/FooterNav'
 import ShopItemCard from '@components/ShopItemCard'
 import Banner from '@components/Banner'
-import { useState, useEffect } from 'react'
-
-let clothes: any
 
 const Clothing: NextPage = () => {
+  const [clothes, setClothes] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   
   useEffect(() => {
     fetch('https://fakestoreapi.com/products?limit=5')
     .then(res => res.json())
     .then(data => {
-      clothes = data
+      setClothes(data)
       setIsLoading(false)
         console.log(clothes)
       })
-  }, [])
+  }, [clothes])
 
   return (
     <>
@@ -30,11 +29,11 @@ const Clothing: NextPage = () => {
     <div>
       <HeaderNav />
 
-      <Banner 
+      {/* <Banner 
         title="NENE"
         imgSrc="/../public/img/logo.jpg"
         imgAlt="Logo Image"
-      />
+      /> */}
       
       {isLoading ? (
         <p>cargando productos...</p>

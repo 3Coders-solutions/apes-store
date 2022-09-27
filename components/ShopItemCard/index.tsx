@@ -11,12 +11,12 @@ type ShopItemProps = {
 const ShopItemCard = ({ name, description, imgSrc, price }: ShopItemProps) => {
   return (
     <div className={styles.card}>
-      <h3>{name}</h3>
-      <div>
-        <Image src={imgSrc} alt={name} height={150} width={150} />
+      <h3 className={styles.card__itemTitle}>{name}</h3>
+      <div className={styles.card__itemDescription}>
+        <Image className={styles.card__itemImage} src={imgSrc} alt={name} height={150} width={150} />
         <p>{description}</p>
-        <h3>${price}</h3>
       </div>
+      <h3 className={styles.card__price}>${price}</h3>
     </div>
   )
 }

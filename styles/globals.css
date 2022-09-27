@@ -79,6 +79,18 @@ button:active {
   transform: translate(-50%, -50%);
 }
 
+.form {
+  background-color: var(--clr-secondary);
+  border-radius: .25em;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.form input {
+  margin-bottom: 1em;
+}
+
 /* ---------- LINKS ---------- */
 .social-link { 
   text-transform: capitalize;
