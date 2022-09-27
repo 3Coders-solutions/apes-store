@@ -52,24 +52,34 @@ ul {
   }
 } */
 
-.button-link {
+/* ---------- BUTTONS ---------- */
+button {
   background-color: var(--clr-secondary);
   border-radius: .25em;
-  cursor: pointer;
   display: inline-block;
   min-width: fit-content;
   padding: .5em .75em;
 }
 
-.button-link:hover,
-.button-link:active {
+button:hover,
+button:active {
   filter: brightness(80%);
 }
 
+/* ---------- UTILS ---------- */
 .container {
   margin-inline: var(--margin-x);
 }
 
+.center-screen {
+  left: 50%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ---------- LINKS ---------- */
 .social-link { 
   text-transform: capitalize;
   transition: color, background-color, ease .3s;
@@ -89,5 +99,19 @@ ul {
 .default-link:hover,
 .default-link:active {
   text-decoration: underline;
+  filter: brightness(80%);
+}
+
+.button-link {
+  background-color: var(--clr-secondary);
+  border-radius: .25em;
+  display: inline-block;
+  min-width: fit-content;
+  padding: .5em .75em;
+  cursor: pointer;
+}
+
+.button-link:hover,
+.button-link:active {
   filter: brightness(80%);
 }

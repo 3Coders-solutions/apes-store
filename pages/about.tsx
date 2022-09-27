@@ -6,14 +6,14 @@ import FooterNav from '@components/FooterNav'
 const About: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Apes | Nosotros</title>
-      </Head>
-      <div>
-        <HeaderNav />
-        About
-        <FooterNav />
-      </div>
+    <Head>
+      <title>Apes | Nosotros</title>
+    </Head>
+    <div>
+      <HeaderNav />
+      About
+      <FooterNav />
+    </div>
     </>
   )
 }
