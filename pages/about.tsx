@@ -13,13 +13,13 @@ const About: NextPage = () => {
     </Head>
     <div>
       <HeaderNav />
-      <main className={styles.main}>
+      <main className={`${styles.main} container`}>
         <div>
           <p>
             Somos una empresa ubicada en la Ciudad Autónoma de Buenos Aires, que se dedica a la venta y distribución de distintas prendas tanto importadas como de la industria nacional.
           </p>
           <p>
-            Nuestro objetivo es facilitar la adquisición de distintos productos a través de un Ecommerce intuitivo y ofreciendo un servicio y atención de calidad las 24hs.
+            Nuestro objetivo es facilitar la adquisición de distintos productos a través de un Ecommerce intuitivo, ofreciendo un servicio de calidad y estando siempre a disposición del cliente.
           </p>
         </div>
         <div>
@@ -31,7 +31,7 @@ const About: NextPage = () => {
           />
         </div>
       </main>
-      <section>
+      <section className="container">
         <h2>Nuestros objetivos con los clientes son:</h2>
         <ul>
           <div>

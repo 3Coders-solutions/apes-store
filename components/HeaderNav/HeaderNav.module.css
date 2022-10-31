@@ -63,6 +63,17 @@
 }
 .searchInput:focus { border: 1px solid rgba(0, 0, 0, .1); }
 
+@media (max-width: 920px) {
+  .loginContainer {
+    order: 1;
+  }
+  .searcherContainer {
+    order: 2;
+    width: 100%;
+    justify-self: center;
+  }
+}
+
 .loginContainer {
   align-items: center;
   display: flex;

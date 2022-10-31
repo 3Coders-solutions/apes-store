@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { useState } from 'react'
 import styles from './HeaderNav.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
@@ -24,6 +25,8 @@ const LINKS = [
 ]
 
 const HeaderNav = () => {
+  const [user, setUser] = useState(null)
+
   const handleSearch = (ev: any) => {
     ev.preventDefault()
     console.dir(ev.target)
@@ -35,14 +38,16 @@ const HeaderNav = () => {
     <header className={styles.header}>
       <div className="container">
         <div className={styles.headerTop}>
-          <div>
-            <Image
-              src="/../public/img/logo.jpg"
-              alt="Logo img"
-              width={50}
-              height={50}
-            />
-          </div>
+          <Link href="/">
+            <a>
+              <Image
+                src="/../public/img/logo.jpg"
+                alt="Logo img"
+                width={50}
+                height={50}
+              />
+            </a>
+          </Link>
           <div className={styles.searcherContainer}>
             <form className={styles.searcher} onSubmit={handleSearch}>
               <button className={styles.searchButton} type="submit">
@@ -57,14 +62,18 @@ const HeaderNav = () => {
               />
             </form>
           </div>
-          <div className={styles.loginContainer}>
-            <Link href="/login">
-              <a className="button-link">Iniciar Sesión</a>
-            </Link>
-            <Link href="/signup">
-              <a className="button-link">Registrarse</a>
-            </Link>
-          </div>
+          {user ? (
+            <div>LOGGED USER MENU</div>
+          ) : (
+            <div className={styles.loginContainer}>
+              <Link href="/login">
+                <a className="button-link">Iniciar Sesión</a>
+              </Link>
+              <Link href="/signup">
+                <a className="button-link">Registrarse</a>
+              </Link>
+            </div>
+          )}
         </div>
         <nav>
           <ul className={styles.nav_ul}>

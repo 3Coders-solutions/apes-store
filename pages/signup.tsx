@@ -1,10 +1,16 @@
 import { NextPage } from 'next'
 
 const Signup: NextPage = () => {
-  const handleSubmit = (ev: any) => {
+  const handleSubmit = async (ev: any) => {
     ev.preventDefault()
     const formData = Object.fromEntries(new FormData(ev.target))
-    console.log(formData)
+    const res = await fetch('http://localhost:3000/api/auth/signup', { 
+      method: 'POST', 
+      headers: { 'Content-Type': 'application/json' }, 
+      body: JSON.stringify(formData)
+    })
+    const data = await res.json()
+    console.log('respuesta:', data)
   }
 
   return (
@@ -36,6 +42,13 @@ const Signup: NextPage = () => {
           type="password" 
           id="password"
           name="password"
+          required
+        />
+        <label htmlFor="password">Confirmar contraseña: </label>
+        <input 
+          type="password" 
+          id="password-confirmation"
+          name="passwordConfirmation"
           required
         />
         <button type="submit">Registrarse</button>
