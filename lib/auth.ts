@@ -1,18 +1,27 @@
 import prisma from './prisma'
 import bcrypt from 'bcrypt'
 
-export async function createUser(name: string, email: string, password: string) {
+type UserData = {
+  name: string,
+  surname: string,
+  email: string,
+  password: string
+}
+
+export async function createUser(user: UserData) {
+  const { name, surname, email, password } = user
   try {
     const saltRounds = await bcrypt.genSalt(10)
     const passwordHash = await bcrypt.hash(password, saltRounds)
-    const user = await prisma.user.create({
+    const newUser = await prisma.user.create({
       data: {
         name,
+        surname,
         email,
         password: passwordHash
       }
     })
-    const userInfo = Object.fromEntries(Object.entries(user).filter(([key,value]) => key != "password"))
+    const userInfo = Object.fromEntries(Object.entries(newUser).filter(([key,value]) => key != "password"))
     return [userInfo, null]
   } catch (error) {
     console.error(error)

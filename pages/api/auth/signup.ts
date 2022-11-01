@@ -8,11 +8,11 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method !== "POST") return res.status(405).json({ error: 'Method not allowed' })
-  const { name, email, password, passwordConfirmation } = req.body
+  const { name, surname, email, password, passwordConfirmation } = req.body
   
   try {
     if (password !== passwordConfirmation) throw new Error('Passwords do not match')
-    const [user, error] = await createUser(name, email, password)
+    const [user, error] = await createUser(req.body)
     if (error) throw error
     res.status(200).json(user)
   } catch (error) {
