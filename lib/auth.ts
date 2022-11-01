@@ -36,8 +36,9 @@ export async function getUser(email: string) {
         email
       }
     })
-    if (!user) throw new Error('User does not exists')
-    return [user, null]
+    const userInfo = Object.fromEntries(Object.entries(user).filter(([key,value]) => key != "password"))
+    if (!userInfo) throw new Error('User does not exists')
+    return [userInfo, null]
   } catch (error) {
     console.error(error)
     return [null, error]

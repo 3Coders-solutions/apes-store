@@ -1,9 +1,18 @@
-import { NextApiRequest, NextApiResponse } from "next"
+import { NextApiRequest, NextApiResponse } from 'next'
+import { getUser } from 'lib/auth'
+import errorHandler from 'middleware/errorHandler'
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse//<Data>
+  res: NextApiResponse
 ) {
-  const { user: pid } = req.query
-  res.end(`Post: ${pid}`)
+  try {
+    const { email } = req.body
+    const [user, error] = await getUser(email)
+    if (error) throw error
+    res.status(200).json(user)
+  } catch (error) {
+    console.error(error)
+    errorHandler(error, req, res)
+  }
 }
