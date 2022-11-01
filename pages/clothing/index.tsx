@@ -19,7 +19,7 @@ const Clothing: NextPage = () => {
       setIsLoading(false)
         console.log(clothes)
       })
-  }, [clothes])
+  }, [])
 
   return (
     <>
