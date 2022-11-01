@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prisma:migrate-dev": "npx prisma migrate dev --name init && "
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
@@ -15,7 +16,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@prisma/client": "^4.3.1",
-    "bcrypt": "^5.0.1",
+    "bcrypt": "^5.1.0",
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0"
