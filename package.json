@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prisma:migrate-dev": "npx prisma migrate dev --name init && "
+    "prisma:migrate-dev": "npx prisma migrate dev --name init"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
