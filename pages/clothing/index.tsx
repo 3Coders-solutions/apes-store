@@ -10,14 +10,18 @@ import Banner from '@components/Banner'
 const Clothing: NextPage = () => {
   const [clothes, setClothes] = useState([])
   const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState('')
   
   useEffect(() => {
     fetch('https://fakestoreapi.com/products?limit=5')
-    .then(res => res.json())
-    .then(data => {
-      setClothes(data)
-      setIsLoading(false)
+      .then(res => res.json())
+      .then(data => {
+        setClothes(data)
+        setIsLoading(false)
         console.log(clothes)
+      })
+      .catch(error => {
+        setError(error.message)
       })
   }, [])
 
@@ -42,6 +46,7 @@ const Clothing: NextPage = () => {
         <div style={{ display: "flex"}}>
           {clothes.map((item: any) => 
             <ShopItemCard 
+            id={item.id}
             name={item.title} 
             description={item.description} 
             imgSrc={item.image} 
@@ -51,6 +56,7 @@ const Clothing: NextPage = () => {
           )}
         </div>
       )}
+      {error ? ( <p>{error}</p> ) : null}
       
       <FooterNav />
     </div>
