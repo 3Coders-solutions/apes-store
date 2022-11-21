@@ -1,5 +1,6 @@
 import prisma from './prisma'
 import bcrypt from 'bcrypt'
+import { ValidationError } from './errors'
 
 type UserData = {
   name: string,
@@ -36,8 +37,9 @@ export async function getUser(email: string) {
         email
       }
     })
+    //@ts-ignore
     const userInfo = Object.fromEntries(Object.entries(user).filter(([key,value]) => key != "password"))
-    if (!userInfo) throw new Error('User does not exists')
+    if (!userInfo) throw new ValidationError('User does not exists')
     return [userInfo, null]
   } catch (error) {
     console.error(error)
@@ -62,9 +64,9 @@ export async function login(email: string, password: string) {
         email
       }
     })
-    if (!user) throw new Error('Invalid passowrd or email')
+    if (!user) throw new ValidationError('Invalid passowrd or email')
     const match = await bcrypt.compare(password, user.password)
-    if (!match) throw new Error('Invalid password or email') 
+    if (!match) throw new ValidationError('Invalid password or email') 
     const userInfo = Object.fromEntries(Object.entries(user).filter(([key,value]) => key != "password"))
     return [userInfo, null]
   } catch (error) {
