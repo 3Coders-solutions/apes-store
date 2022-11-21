@@ -24,7 +24,7 @@ const About: NextPage = () => {
         </div>
         <div>
           <Image
-            src="/../public/img/logo.jpg"
+            src="/img/logo.jpg"
             alt="Logo img"
             width={250}
             height={250}
@@ -36,7 +36,7 @@ const About: NextPage = () => {
         <ul>
           <div>
             <Image
-              src="/../public/img/about.jpg"
+              src="/img/about.jpg"
               alt="Imagen ropa de calidad"
               width={50}
               height={50}
@@ -48,7 +48,7 @@ const About: NextPage = () => {
         <ul>
           <div>
             <Image
-              src="/../public/img/about.jpg"
+              src="/img/about.jpg"
               alt="Imagen precios accesibles"
               width={50}
               height={50}
@@ -60,7 +60,7 @@ const About: NextPage = () => {
         <ul>
           <div>
             <Image
-              src="/../public/img/about.jpg"
+              src="/img/about.jpg"
               alt="Imagen confianza"
               width={50}
               height={50}

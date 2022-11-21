@@ -29,11 +29,12 @@ const Clothing: NextPage = () => {
     <div>
       <HeaderNav />
 
-      {/* <Banner 
-        title="NENE"
-        imgSrc="/../public/img/logo.jpg"
+      <Banner 
+        title="Summer Sale"
+        imgSrc="/img/banner-bg1.jpg"
         imgAlt="Logo Image"
-      /> */}
+        center
+      />
       
       {isLoading ? (
         <p>cargando productos...</p>

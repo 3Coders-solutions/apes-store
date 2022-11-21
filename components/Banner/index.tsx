@@ -4,19 +4,20 @@ import styles from './Banner.module.css'
 type BannerProps = {
   title: string,
   imgSrc: string,
-  imgAlt: string
+  imgAlt: string,
+  center?: boolean
 }
 
-const Banner = ({ title, imgSrc, imgAlt }: BannerProps) => {
+const Banner = ({ title, imgSrc, imgAlt, center }: BannerProps) => {
   return (
-    <div className={styles.banner}>
+    <div className={`${center ? styles.centeredBanner : styles.banner}`}>
       <h2>{title}</h2>
-      <div>
+      <div className='image-container'>
         <Image 
+          className='image'
           src={imgSrc} 
           alt={imgAlt}
-          width={300}
-          height={300}
+          layout="fill"
         />
       </div>
     </div>

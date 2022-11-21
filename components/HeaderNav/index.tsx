@@ -41,7 +41,7 @@ const HeaderNav = () => {
           <Link href="/">
             <a>
               <Image
-                src="/../public/img/logo.jpg"
+                src="/img/logo.jpg"
                 alt="Logo img"
                 width={50}
                 height={50}

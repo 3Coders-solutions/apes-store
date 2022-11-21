@@ -2,4 +2,24 @@
   align-items: center;
   display: flex;
   justify-content: center;
+  width: 100%;
+}
+
+/* image container */
+.centeredBanner > div {
+  height: clamp(200px, 30vh, 300px);
+}
+
+.centeredBanner {
+  position: relative;
+}
+
+.centeredBanner > h2 {
+  font-size: 3rem;
+  left: 50%;
+  position: absolute;
+  text-shadow: 2px 2px var(--clr-primary);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
 }

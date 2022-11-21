@@ -131,3 +131,19 @@ button:active {
 .button-link:active {
   filter: brightness(80%);
 }
+
+/* ---------- IMAGES ---------- */
+.image-container {
+  width: 100%;
+}
+
+.image-container > div {
+  position: unset;
+}
+
+.image-container .image {
+  object-fit: cover;
+  width: 100%;
+  position: relative;
+  height: unset;
+}
