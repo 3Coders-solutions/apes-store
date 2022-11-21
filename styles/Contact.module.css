@@ -1,0 +1,23 @@
+.mainContent {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  text-align: center;
+  margin-block: 1em;
+}
+
+.contactForm {
+  display: flex;
+}
+
+.contactForm div {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid red;
+}
+
+.smallText {
+  font-size: .75rem;
+}
