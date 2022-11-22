@@ -1,6 +1,9 @@
 .mainContent {
   display: flex;
+  gap: 2rem;
   justify-content: space-between;
+  height: 100%;
+  width: 100%;
 }
 
 .title {
@@ -10,12 +13,50 @@
 
 .contactForm {
   display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+
+.contactForm button{
+  width: 100%;
+  margin: 1rem 2rem;
+  height: 10%;
+}
+
+.contactInfo{
+  display: flex;
+  width: 55%;
+  flex-direction: column;
+}
+
+.contactInfo ul{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+  height: 100%;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+
+.mapContainer{
+  width: 50%;
+  position: relative;
+}
+
+.mapContainer > div{
+  height: 350px;
 }
 
 .contactForm div {
   display: flex;
   flex-direction: column;
-  border: 2px solid red;
+  max-height: 10%;
+  width: 100%;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .smallText {

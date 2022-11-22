@@ -3,6 +3,25 @@ import Head from 'next/head'
 import styles from 'styles/Contact.module.css'
 import HeaderNav from '@components/HeaderNav'
 import FooterNav from '@components/FooterNav'
+import ResponsiveImage from '@components/ResponsiveImage'
+import Link from 'next/link'
+
+
+
+const CONTACT_LINKS = [
+  {
+    title: 'Email',
+    href: 'https://gmail.com'
+  },
+  {
+    title: 'Whatsapp',
+    href: 'https://web.whatsapp.com/'
+  },
+  {
+    title: 'Ubicacion',
+    href: 'https://www.google.com.ar/maps/@-34.6189702,-58.5180901,19.88z'
+  },
+]
 
 const Contact: NextPage = () => {
   const handleMessageSubmit = (ev: any) => {
@@ -21,17 +40,21 @@ const Contact: NextPage = () => {
       <main className='container'>
         <h1 className={styles.title}>Contacto</h1>
         <div className={styles.mainContent}>
-          <div>
+          <div className={styles.contactInfo}>
             <h2>Contactanos</h2>
             <ul>
               <li>0810-888-3398</li>
-              <li>Whatsapp</li>
-              <li>Email</li>
-              <li>Ubicacion</li>
+              {CONTACT_LINKS.map((link) => (
+                <li key={link.title}>
+                  <Link href={link.href}>
+                    <a className="default-link" target="_blank">{link.title}</a>
+                  </Link>
+                </li>
+              ))}
+              <li className={styles.mapContainer} >
+                <ResponsiveImage imgSrc='/img/img-placeholder.png' imgAlt='map-placeholder' />
+              </li>
             </ul>
-            <div>
-              mini mapa
-            </div>
           </div>
           <div>
             <h2>Envianos un mensaje</h2>
@@ -49,9 +72,10 @@ const Contact: NextPage = () => {
                 <input type="tel" name="number" id="number" />
               </div>
               <div>
-                <label htmlFor="message">Mensaje</label>
-                <textarea name="message" id="message" cols={30} rows={10}></textarea>
+                <label  htmlFor="message">Mensaje</label>
+                <textarea name="message" id="message"  rows={10}></textarea>
               </div>
+              <button>Enviar</button>
             </form>
           </div>
         </div>
