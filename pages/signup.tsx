@@ -1,30 +1,39 @@
 import { NextPage } from 'next'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import styles from '@styles/Signup.module.css'
+import axios from 'axios'
 
 const Signup: NextPage = () => {
+  useEffect(() => {
+    if(localStorage.getItem("user")){
+      //@ts-ignore
+      window.location = '/' 
+    }
+  })
+
   const [error, setError] = useState('')
 
   const handleSubmit = async (ev: any) => {
     const form = ev.target
     ev.preventDefault()
     const formData = Object.fromEntries(new FormData(form))
-    const res = await fetch('http://localhost:3000/api/auth/signup', { 
-      method: 'POST', 
-      headers: { 'Content-Type': 'application/json' }, 
-      body: JSON.stringify(formData)
-    })
-    const data = await res.json()
-    if (data.error) {
-      setError(data.error.message)
-      return
-    }
+    axios.post('/api/auth/signup', formData)
+    .then(e => 
+      {
+        localStorage.setItem("user", e.data.email)
+        //@ts-ignore
+        window.location = '/' 
+      })
+    .catch(e => {
+      setError("Error al crear cuenta");
+    });
     form.reset()
   }
 
   return (
     <div className="container center-screen">
       {error ? <p>{error}</p> : null}
-      <form className="form" onSubmit={handleSubmit}>
+      <form className={`form ${styles.form}`} onSubmit={handleSubmit}>
         <label htmlFor="email">Email: </label>
         <input
           type="text" 

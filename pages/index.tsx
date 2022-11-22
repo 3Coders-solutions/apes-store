@@ -1,5 +1,6 @@
 import { NextPage } from 'next'
 import { useState, useEffect } from 'react'
+import styles from '@styles/Index.module.css'
 import Head from 'next/head'
 import Banner from '@components/Banner'
 import HeaderNav from '@components/HeaderNav'
@@ -13,7 +14,7 @@ const Home: NextPage = () => {
   const [error, setError] = useState('')
   
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products?limit=5')
+    fetch('https://fakestoreapi.com/products?limit=19')
       .then(res => res.json())
       .then(data => {
         setClothes(data)
@@ -23,7 +24,7 @@ const Home: NextPage = () => {
       .catch(error => {
         setError(error.message)
       })
-  })
+  }, [])
 
   return (
     <>
@@ -42,16 +43,21 @@ const Home: NextPage = () => {
       {isLoading ? (
         <p>cargando productos...</p>
       ) : (
-        <div style={{ display: "flex"}}>
-          {clothes.map((item: any) => 
-            <ShopItemCard 
-            id={item.id}
-            name={item.title} 
-            description={item.description} 
-            imgSrc={item.image} 
-            price={item.price}
-            key={item.id}
-          />
+        <div className={styles.itemsContainer}>
+          {clothes.map((item: any) => {
+            if (item.category == 'jewelery' || item.category.includes('clothing')) {
+              return (
+              <ShopItemCard 
+                id={item.id}
+                name={item.title} 
+                description={item.description} 
+                imgSrc={item.image} 
+                price={item.price}
+                key={item.id}
+              />
+             )
+            }
+          }
           )}
         </div>
       )}

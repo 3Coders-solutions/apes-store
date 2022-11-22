@@ -9,7 +9,6 @@ export default async function handler(
 ) {
   if (req.method !== "POST") return res.status(405).json({ error: 'Method not allowed' })
   const { email, password } = req.body
-
   try {
     const [user, error] = await login(email, password)
     if (error) throw error

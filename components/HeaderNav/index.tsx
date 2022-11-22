@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import styles from './HeaderNav.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-
+import axios from 'axios';
 const LINKS = [
   {
     title: 'Inicio',
@@ -22,7 +22,17 @@ const LINKS = [
 
 const HeaderNav = () => {
   const [user, setUser] = useState(null)
-
+  useEffect(() => {
+    axios.post('/api/auth/user', 
+    {email:localStorage.getItem("user")}
+    )
+    .then(({data}) => {
+      if(data) setUser(data);
+      //@ts-ignore
+      else if (localStorage.getItem("user")) window.location = '/logout'
+    })
+    .catch(e => console.error(e))
+  }, [])
   const handleSearch = (ev: any) => {
     ev.preventDefault()
     console.dir(ev.target)
@@ -59,7 +69,10 @@ const HeaderNav = () => {
             </form>
           </div>
           {user ? (
-            <div>LOGGED USER MENU</div>
+            //@ts-ignore
+            <div>Bienvenido {user.name} <Link href="/logout">
+            <a className="button-link">Cerrar Sesion</a>
+          </Link></div>
           ) : (
             <div className={styles.loginContainer}>
               <Link href="/login">

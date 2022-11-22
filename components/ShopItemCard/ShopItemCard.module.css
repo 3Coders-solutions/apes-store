@@ -1,5 +1,4 @@
 .card {
-  margin: 1rem; /* BORRAR */
   align-items: center;
   box-shadow: 0 0 15px -2px var(--clr-secondary);
   border-radius: .5em;
