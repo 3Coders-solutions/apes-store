@@ -52,7 +52,7 @@ const Contact: NextPage = () => {
                 </li>
               ))}
               <li className={styles.mapContainer} >
-                <ResponsiveImage imgSrc='/img/img-placeholder.png' imgAlt='map-placeholder' />
+                <ResponsiveImage imgSrc='/img/img-placeholder.png' imgAlt='Ubicacion de Google Maps' />
               </li>
             </ul>
           </div>
@@ -75,7 +75,7 @@ const Contact: NextPage = () => {
                 <label  htmlFor="message">Mensaje</label>
                 <textarea name="message" id="message"  rows={10}></textarea>
               </div>
-              <button>Enviar</button>
+              <button className={styles.submitButton}>Enviar</button>
             </form>
           </div>
         </div>

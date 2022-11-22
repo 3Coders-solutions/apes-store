@@ -11,26 +11,13 @@
   margin-block: 1em;
 }
 
-.contactForm {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-
-.contactForm button{
-  width: 100%;
-  margin: 1rem 2rem;
-  height: 10%;
-}
-
-.contactInfo{
+.contactInfo {
   display: flex;
   width: 55%;
   flex-direction: column;
 }
 
-.contactInfo ul{
+.contactInfo ul {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -40,9 +27,8 @@
   padding: 1rem;
 }
 
-
-.mapContainer{
-  width: 50%;
+.mapContainer {
+  width: 100%;
   position: relative;
 }
 
@@ -50,13 +36,36 @@
   height: 350px;
 }
 
+.contactForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.contactForm input {
+  max-width: 40ch;
+}
+
 .contactForm div {
   display: flex;
   flex-direction: column;
   max-height: 10%;
   width: 100%;
-  margin-left: 2rem;
-  margin-right: 2rem;
+}
+
+.contactForm input,
+.contactForm textarea {
+  border: 2px solid var(--clr-secondary);
+  border-radius: .25rem;
+  padding: .5em;
+}
+
+.submitButton {
+  border: none;
+  display: inline-block;
+  font-size: 1rem;
+  padding: .75em 1.25em;
 }
 
 .smallText {
