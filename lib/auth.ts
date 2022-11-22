@@ -17,6 +17,7 @@ export async function createUser(user: UserData) {
     const newUser = await prisma.user.create({
       data: {
         name,
+        //@ts-ignore
         surname,
         email,
         password: passwordHash
