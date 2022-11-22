@@ -37,7 +37,6 @@ const Clothing: NextPage = () => {
         title="Summer Sale"
         imgSrc="/img/banner-bg1.jpg"
         imgAlt="Logo Image"
-        center
       />
       
       {isLoading ? (
