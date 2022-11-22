@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import styles from './ResponsiveImage.module.css'
 
 type ImgProps = {
   imgSrc: string,
@@ -7,14 +8,14 @@ type ImgProps = {
 
 const ResponsiveImage = ({ imgSrc, imgAlt }: ImgProps) => {
   return (
-    <div className='image-container'>
-        <Image 
-          className='image'
-          src={imgSrc} 
-          alt={imgAlt}
-          layout="fill"
-        />
-      </div>
+    <div className={styles.imageContainer}>
+      <Image 
+        className={styles.image}
+        src={imgSrc} 
+        alt={imgAlt}
+        layout="fill"
+      />
+    </div>
   )
 }
 

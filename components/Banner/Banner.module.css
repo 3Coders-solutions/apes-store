@@ -2,19 +2,15 @@
   align-items: center;
   display: flex;
   justify-content: center;
+  position: relative;
   width: 100%;
 }
 
-/* image container */
-.centeredBanner > div {
+.banner > div {
   height: clamp(200px, 30vh, 300px);
 }
 
-.centeredBanner {
-  position: relative;
-}
-
-.centeredBanner > h2 {
+.banner > h2 {
   font-size: 3rem;
   left: 50%;
   position: absolute;

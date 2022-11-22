@@ -1,17 +1,15 @@
-import Image from 'next/image'
 import styles from './Banner.module.css'
 import ResponsiveImage from '@components/ResponsiveImage'
 
 type BannerProps = {
   title: string,
   imgSrc: string,
-  imgAlt: string,
-  center?: boolean
+  imgAlt: string
 }
 
-const Banner = ({ title, imgSrc, imgAlt, center }: BannerProps) => {
+const Banner = ({ title, imgSrc, imgAlt }: BannerProps) => {
   return (
-    <div className={`${center ? styles.centeredBanner : styles.banner}`}>
+    <div className={styles.banner}>
       <h2>{title}</h2>
       <ResponsiveImage 
         imgSrc={imgSrc}

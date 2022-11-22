@@ -3,6 +3,7 @@ import Head from 'next/head'
 
 import HeaderNav from '@components/HeaderNav'
 import FooterNav from '@components/FooterNav'
+import Banner from '@components/Banner'
 
 const Home: NextPage = () => {
   return (
@@ -14,7 +15,7 @@ const Home: NextPage = () => {
       </Head>
 
       <HeaderNav />
-
+      
       <FooterNav />
     </>
   )
