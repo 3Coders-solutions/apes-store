@@ -4,6 +4,8 @@ import Image from 'next/image'
 import styles from '@styles/About.module.css'
 import HeaderNav from '@components/HeaderNav'
 import FooterNav from '@components/FooterNav'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faClipboardCheck, faHandHoldingDollar, faHandshake } from '@fortawesome/free-solid-svg-icons'
 
 const About: NextPage = () => {
   return (
@@ -13,6 +15,7 @@ const About: NextPage = () => {
     </Head>
     <div>
       <HeaderNav />
+      <h1 className={styles.title}>Nosotros</h1>
       <main className={`${styles.main} container`}>
         <div>
           <p>
@@ -31,44 +34,33 @@ const About: NextPage = () => {
           />
         </div>
       </main>
-      <section className="container">
-        <h2>Nuestros objetivos con los clientes son:</h2>
-        <ul>
-          <div>
-            <Image
-              src="/img/about.jpg"
-              alt="Imagen ropa de calidad"
-              width={50}
-              height={50}
-            />
-          </div>
-          <h3>Ropa de calidad</h3>
-          <p></p>
-        </ul>
-        <ul>
-          <div>
-            <Image
-              src="/img/about.jpg"
-              alt="Imagen precios accesibles"
-              width={50}
-              height={50}
-            />
-          </div>
-          <h3>Precios accesibles</h3>
-          <p></p>
-        </ul>
-        <ul>
-          <div>
-            <Image
-              src="/img/about.jpg"
-              alt="Imagen confianza"
-              width={50}
-              height={50}
-            />
-          </div>
-          <h3>Confianza</h3>
-          <p></p>
-        </ul>
+      <section className={styles.objectivesSection}>
+        <div className="container">
+          <h2>Nos caracterizamos por brindar:</h2>
+          <ul className={styles.objectivesContainer}>
+            <li>
+              <h3>Ropa de calidad</h3>
+              <div>
+                <FontAwesomeIcon icon={faClipboardCheck} />
+              </div>
+              <p>Trabajamos exclusivamente con proveedores de primera calidad</p>
+            </li>
+            <li>
+              <h3>Precios accesibles</h3>
+              <div>
+                <FontAwesomeIcon icon={faHandHoldingDollar} />
+              </div>
+              <p>Ofrecemos nuestros productos al mejor precio del mercado</p>
+            </li>
+            <li>
+              <h3>Confianza</h3>
+              <div>
+                <FontAwesomeIcon icon={faHandshake} />
+              </div>
+              <p>Priorizamos la atención y calidad de servicio para nuestros clientes</p>
+            </li>
+          </ul>
+        </div>
       </section>
       <FooterNav />
     </div>

@@ -23,7 +23,7 @@ const Clothing: NextPage = () => {
       .catch(error => {
         setError(error.message)
       })
-  }, [])
+  })
 
   return (
     <>
@@ -37,7 +37,6 @@ const Clothing: NextPage = () => {
         title="Summer Sale"
         imgSrc="/img/banner-bg1.jpg"
         imgAlt="Logo Image"
-        center
       />
       
       {isLoading ? (
