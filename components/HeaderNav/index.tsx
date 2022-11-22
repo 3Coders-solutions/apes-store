@@ -11,10 +11,6 @@ const LINKS = [
     href: '/'
   },
   {
-    title: 'Catálogo',
-    href: '/clothing'
-  },
-  {
     title: 'Nosotros',
     href: '/about'
   },

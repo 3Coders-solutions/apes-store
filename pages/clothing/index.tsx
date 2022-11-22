@@ -26,12 +26,7 @@ const Clothing: NextPage = () => {
   })
 
   return (
-    <>
-    <Head>
-      <title>Apes | Catálogo</title>
-    </Head>
     <div>
-      <HeaderNav />
 
       <Banner 
         title="Summer Sale"
@@ -57,9 +52,7 @@ const Clothing: NextPage = () => {
       )}
       {error ? ( <p>{error}</p> ) : null}
       
-      <FooterNav />
     </div>
-    </>
   )
 }
 
