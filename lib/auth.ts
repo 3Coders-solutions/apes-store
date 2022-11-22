@@ -14,6 +14,7 @@ export async function createUser(user: UserData) {
   try {
     const saltRounds = await bcrypt.genSalt(10)
     const passwordHash = await bcrypt.hash(password, saltRounds)
+    //@ts-ignore
     const newUser = await prisma.user.create({
       data: {
         name,
