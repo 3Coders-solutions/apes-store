@@ -1,6 +1,10 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
+import styles from '@styles/Product.module.css'
+import Image from 'next/image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
 import HeaderNav from '@components/HeaderNav'
 import FooterNav from '@components/FooterNav'
 
@@ -31,13 +35,23 @@ const Product = () => {
       {isLoading ? (
         <h3>Cargando producto...</h3>
       ) : (
-        <div>
-          <h2>{product.title}</h2>
-          <p>{product.description}</p>
-          <img width={250} src={product.image} alt="Imagen del producto" />
-          <h3>Precio ${product.price}</h3>
-          <p>Calificaciones del producto: {product.rating.rate}</p>
-          <p>Opiniones de {product.rating.count} clientes</p>
+        <div className={`container ${styles.productCard}`}>
+          <div className={styles.imageContainer}>
+            <Image 
+              src={product.image}
+              alt={`Imagen de producto: ${product.title}`}
+              layout="fill"
+            />
+          </div>
+          <div className={styles.productInfo}>
+              <h2>{product.title}</h2>
+              <p>{product.description}</p>
+            <div className={styles.productDetails}>
+              <h3>${product.price}</h3>
+              <p>Calificaciones del producto: <FontAwesomeIcon icon={faStar} className={styles.star}/> {product.rating.rate}</p>
+              <p>Opiniones de {product.rating.count} clientes</p>
+            </div>
+          </div>
         </div>
       )}
       <FooterNav />
